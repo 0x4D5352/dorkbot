@@ -9,5 +9,5 @@ def populate_general_options(module_group):
         "--threads",
         type=int,
         default=1,
-        help="number of concurrent requests to wayback.org",
+        help="number of concurrent requests to cdx server",
     )
