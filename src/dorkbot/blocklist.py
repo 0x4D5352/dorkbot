@@ -70,7 +70,7 @@ class Blocklist(Database):
     def parse_list(self, items):
         for item in items:
             if item.startswith("ip:"):
-                ip = item.split(":")[1]
+                ip = item.split(":", 1)[1]
                 try:
                     ip_net = ipaddress.ip_network(ip)
                 except ValueError as e:
@@ -78,9 +78,9 @@ class Blocklist(Database):
                     continue
                 self.ip_set.add(ip_net)
             elif item.startswith("host:"):
-                self.host_set.add(item.split(":")[1])
+                self.host_set.add(item.split(":", 1)[1])
             elif item.startswith("regex:"):
-                pattern = item.split(":")[1]
+                pattern = item.split(":", 1)[1]
                 regex = re.compile(pattern)
                 self.regex_set.add((pattern, regex))
             else:
@@ -115,7 +115,7 @@ class Blocklist(Database):
         self.connect()
 
         if item.startswith("ip:"):
-            ip = item.split(":")[1]
+            ip = item.split(":", 1)[1]
             try:
                 ip_net = ipaddress.ip_network(ip)
             except ValueError as e:
@@ -123,9 +123,9 @@ class Blocklist(Database):
                 raise
             self.ip_set.add(ip_net)
         elif item.startswith("host:"):
-            self.host_set.add(item.split(":")[1])
+            self.host_set.add(item.split(":", 1)[1])
         elif item.startswith("regex:"):
-            pattern = item.split(":")[1]
+            pattern = item.split(":", 1)[1]
             regex = re.compile(pattern)
             self.regex_set.add((pattern, regex))
         else:
