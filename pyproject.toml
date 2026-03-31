@@ -25,6 +25,11 @@ GitHub = "https://github.com/utiso/dorkbot"
 [project.scripts]
 dorkbot = "dorkbot.dorkbot:main"
 
+[project.optional-dependencies]
+postgresql = [
+    "psycopg[binary]>=3.2.13",
+]
+
 [dependency-groups]
 dev = [
     "pytest>=8.3.5",
