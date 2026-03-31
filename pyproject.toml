@@ -29,6 +29,9 @@ dorkbot = "dorkbot.dorkbot:main"
 postgresql = [
     "psycopg[binary]>=3.2.13",
 ]
+wapiti = [
+    "wapiti3>=3.1.4",
+]
 
 [dependency-groups]
 dev = [
