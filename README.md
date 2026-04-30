@@ -131,8 +131,8 @@ Database drivers:
 
 Scanners:
 * [Wapiti](http://wapiti.sourceforge.net/) (pip install wapiti3)
-* [Codename SCNR](https://github.com/scnr/installer)
-* [Arachni](https://github.com/Arachni/arachni) (deprecated)
+* [Spectre Scan](https://ecsypno.com/pages/codename-scnr)
+* [Arachni](https://arachni-scanner.com) (deprecated)
 
 As needed, dorkbot will search for tools in the following order:
 * Directory specified via relevant module option
